@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-level-rabc
+  namespace: dev
+spec:
+  containers:
+    - name: myimage
+      image: jenkins/jenkins
+      ports:
+        - containerPort: 8080

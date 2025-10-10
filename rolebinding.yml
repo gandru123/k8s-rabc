@@ -1,0 +1,14 @@
+apiVersion: rabc.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: rolebind-pod
+subjects:
+  - apiGroup: ["rabc.authorization.k8s.io/v1"]
+    kind: Group
+    name: devopsteam
+    namespace: dev
+roleRef:
+  apiGroup: "*"
+  kind: "Pod"
+  name: "pod-level-rabc"
+
