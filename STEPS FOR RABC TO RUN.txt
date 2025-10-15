@@ -1,0 +1,15 @@
+STEPS FOR RABC TO RUN :
+1. kubectl api-version | grep rbac -----> for checking rbac authirozation
+2.kubectl create serviceaccount <servicename>
+3.TOKEN=$(kubectl create token servicename)
+4.echo $TOKEN
+6.config kubectl with svc
+  kubectl config set-credentials <userselfhost> --token=$TOKEN
+7.ls -al,cd .kube,cat config
+cat config---->it contain information about the cluster,nodes etc
+8.switch user:
+   kubectl config set-context demo-user-context --cluster=default --user=username
+9.kubectl config current-context
+10.switch to user
+   switched to context demo-user-context
+11.kubectl config use-context kubernetes-admin@--->name of current context
